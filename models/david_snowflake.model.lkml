@@ -22,6 +22,14 @@ explore: events {
   }
 }
 
+explore: events_dt {
+  join: events {
+    type: left_outer
+    sql_on: ${events.id} = ${events_dt.id} ;;
+    relationship: one_to_one
+  }
+}
+
 explore: inventory_items {
   join: products {
     type: left_outer
